@@ -21,17 +21,9 @@ export const getAllPageTweets = async (filter) => {
    }
 };
 
-export const getPageUsersTwits = async (currentPage, filter) => {
-   let url = ``;
-
-   if (filter === "Follow") {
-      url = `/users?page=${currentPage}&limit=3&follow=false`;
-   } else if (filter === "Following") {
-      url = `/users?page=${currentPage}&limit=3&follow=true`;
-   } else {
+export const getPageUsersTwits = async (currentPage) => {
       url = `/users?page=${currentPage}&limit=3`;
-   }
-
+   
    try {
       const response = await axios.get(url);
 
