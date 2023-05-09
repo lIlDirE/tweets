@@ -1,9 +1,9 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "https://645463d0c18adbbdfeb53283.mockapi.io/";
+axios.defaults.baseURL = "https://645a419e95624ceb21fc636c.mockapi.io/";
 
 export const getAllPageTweets = async (filter) => {
-   let url = ``;
+   let url = `/users`;
    if (filter === "Follow") {
       url = `/users?follow=false`;
    } else if (filter === "Following") {

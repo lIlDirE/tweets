@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 
 import { SkeletonTweets } from "components/Skeleton/SkeletonTweets";
-import Loader from "components/Loader/Loader";
 import TweetItem from "./TweetItem/TweetItem";
 
 import { incrementPage } from "redux/Slice/TweetsSlice";
@@ -36,6 +35,7 @@ const TweetsList = () => {
          <TweetContainer>
             <ToHome to="/">Back</ToHome>
             <TweetWrap>
+               {console.log(usersTweets.length)}
                {usersTweets.length !== 0 && <TweetItem />}
                {IsLoading && usersTweets.length === 0 && (
                   <SkeletonTweets quantity={3} />
@@ -44,7 +44,7 @@ const TweetsList = () => {
             {totalPage !== currentPage && usersTweets.length !== 0 && (
                <LoadMore onClick={handelPage} disabled={IsLoading}>
                   {!IsLoading && <>Load More</>}
-                  {IsLoading && <Loader />}
+                  {IsLoading && <>Loading</>}
                </LoadMore>
             )}
          </TweetContainer>

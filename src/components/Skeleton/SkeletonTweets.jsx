@@ -7,7 +7,7 @@ import {
 
 export const SkeletonTweets = ({ quantity }) => {
    const skeletons = [];
-
+   console.log(quantity);
    for (let i = 0; i < quantity; i++) {
       skeletons.push(<SkeletonBody />);
    }

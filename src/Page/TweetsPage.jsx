@@ -3,21 +3,20 @@ import { useDispatch, useSelector } from "react-redux";
 
 import TweetsList from "components/TweetsList/TweetsList";
 
-import { selectCurrentPage, selectFilter } from "redux/selector/selectors";
+import { selectCurrentPage } from "redux/selector/selectors";
 import {
-   getAllPageTweetsThunk,
-   getPageUsersTwitsThunk,
+   getAllPageTweetsThunk, getPageUsersTwitsThunk,
+
 } from "redux/thunk/contactsThunk";
 
 const TweetsPage = () => {
    const dispatch = useDispatch();
-   const filter = useSelector(selectFilter);
    const currentPage = useSelector(selectCurrentPage);
 
    useEffect(() => {
-      dispatch(getAllPageTweetsThunk(filter));
-      dispatch(getPageUsersTwitsThunk({ currentPage, filter }));
-   }, [dispatch, filter, currentPage]);
+      dispatch(getAllPageTweetsThunk());
+      dispatch(getPageUsersTwitsThunk({ currentPage }));
+   }, [dispatch, currentPage]);
 
    return <TweetsList />;
 };

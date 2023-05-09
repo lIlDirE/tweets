@@ -1,8 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-
-import Loader from "components/Loader/Loader";
-
 import { updateUsersTweetsThunk } from "redux/thunk/contactsThunk";
 import { selectIsLoading, selectUsersTweets } from "redux/selector/selectors";
 import { addDots } from "service/utilities";
@@ -27,6 +24,7 @@ const TweetItem = () => {
    const usersTweets = useSelector(selectUsersTweets);
 
    const handelFollow = async (user) => {
+      console.log(user.id);
       if (!user.follow) {
          const editedUser = {
             ...user,
@@ -76,7 +74,6 @@ const TweetItem = () => {
             >
                {!IsLoading && user.follow && <>following</>}
                {!IsLoading && !user.follow && <>follow</>}
-               {IsLoading && <Loader />}
             </FollowButton>
          </TweetCard>
       );
