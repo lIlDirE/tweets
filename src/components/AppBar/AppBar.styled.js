@@ -46,9 +46,4 @@ export const HeaderNavLink = styled(NavLink)`
    }
 `;
 
-export const Filter = styled.select`
-   margin-left: 15px;
-   padding: 3px 5px;
 
-   border-radius: 8px;
-`;

@@ -10,10 +10,8 @@ const Welcome = () => {
       <WelcomeSection>
          <WelcomeContainer>
             <WelcomeText>
-               Welcome to our application, in which we have collected popular
-               people and conducted analytics on their{" "}
-               <WelcomeTextLink to="tweets">Tweets</WelcomeTextLink>, you can
-               also following to them.
+               Welcome to tech part of the tweets task{" "}
+               <WelcomeTextLink to="tweets">Tweets</WelcomeTextLink>
             </WelcomeText>
          </WelcomeContainer>
       </WelcomeSection>

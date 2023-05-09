@@ -32,8 +32,8 @@ const TweetItem = () => {
          };
          dispatch(updateUsersTweetsThunk({ id: user.id, editedUser }))
             .unwrap()
-            .then((res) => {
-               toast.success(`You following ${res.name}`);
+            .then(() => {
+               toast.success(`You following`);
             })
             .catch((error) => {
                toast.error("Something went wrong, try again later");
@@ -45,8 +45,8 @@ const TweetItem = () => {
          };
          dispatch(updateUsersTweetsThunk({ id: user.id, editedUser }))
             .unwrap()
-            .then((res) => {
-               toast.info(`You are unfollow ${res.name}`);
+            .then(() => {
+               toast.info(`You are unfollow`);
             })
             .catch((error) => {
                toast.error("Something went wrong, try again later");

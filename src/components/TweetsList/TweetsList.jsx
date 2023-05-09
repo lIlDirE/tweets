@@ -35,7 +35,6 @@ const TweetsList = () => {
          <TweetContainer>
             <ToHome to="/">Back</ToHome>
             <TweetWrap>
-               {console.log(usersTweets.length)}
                {usersTweets.length !== 0 && <TweetItem />}
                {IsLoading && usersTweets.length === 0 && (
                   <SkeletonTweets quantity={3} />

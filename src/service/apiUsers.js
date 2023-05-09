@@ -2,16 +2,8 @@ import axios from "axios";
 
 axios.defaults.baseURL = "https://645a419e95624ceb21fc636c.mockapi.io/";
 
-export const getAllPageTweets = async (filter) => {
+export const getAllPageTweets = async () => {
    let url = `/users`;
-   if (filter === "Follow") {
-      url = `/users?follow=false`;
-   } else if (filter === "Following") {
-      url = `/users?follow=true`;
-   } else {
-      url = `/users`;
-   }
-
    try {
       const { data } = await axios.get(url);
 
@@ -21,16 +13,9 @@ export const getAllPageTweets = async (filter) => {
    }
 };
 
-export const getPageUsersTwits = async (currentPage, filter) => {
+export const getPageUsersTwits = async (currentPage) => {
    let url = ``;
-
-   if (filter === "Follow") {
-      url = `/users?page=${currentPage}&limit=3&follow=false`;
-   } else if (filter === "Following") {
-      url = `/users?page=${currentPage}&limit=3&follow=true`;
-   } else {
       url = `/users?page=${currentPage}&limit=3`;
-   }
 
    try {
       const response = await axios.get(url);
